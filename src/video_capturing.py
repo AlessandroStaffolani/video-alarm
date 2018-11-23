@@ -1,5 +1,7 @@
 import cv2
 import numpy as np
+import logging
+logging.basicConfig(filename='alarm.log', format='%(asctime)s - %(message)s', datefmt='%d-%m-%y %H:%M:%S', level=logging.INFO)
 
 
 DANGER = 255
@@ -69,4 +71,5 @@ class VideoCapturing:
         print('Actual current pixel number: ' + str(num_white))
         if num_white > self.alarm_check and not self.alarm_fired:
             # ALARM!!
-            print('ALARM!!!!')
+            print('ALARM!!!')
+            logging.info('ALARM!!!')
